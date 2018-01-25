@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="http://www.kingbright.com">
   <title>Google cloud一键配置ssr+bbr加速 | King Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
+  <meta name="description" content="一直以来都使用teddysun的SSR和BBR一键包，但是很多时候安装BBR之前就已经安装了SSR，安装BBR就是为了加速SSR，故今日结合两个安装包，自定义了一个SSR+BBR加速一键安装包。 系统要求系统支持： CentOS 6+ ， Debian 7+ ， Ubuntu 12+虚拟技术： 除OpenVZ （ KVM 、 Xen 、 VMware 等）内存要求： ≥ 128M 关于1.本脚本在">
+<meta name="keywords" content="SSR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Google cloud一键配置ssr+bbr加速">
 <meta property="og:url" content="http://www.kingbright.com/2018/01/25/在google-cloud-一键配置ssr-bbr/index.html">
 <meta property="og:site_name" content="King Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="一直以来都使用teddysun的SSR和BBR一键包，但是很多时候安装BBR之前就已经安装了SSR，安装BBR就是为了加速SSR，故今日结合两个安装包，自定义了一个SSR+BBR加速一键安装包。 系统要求系统支持： CentOS 6+ ， Debian 7+ ， Ubuntu 12+虚拟技术： 除OpenVZ （ KVM 、 Xen 、 VMware 等）内存要求： ≥ 128M 关于1.本脚本在">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-25T10:55:57.811Z">
+<meta property="og:updated_time" content="2018-01-25T11:19:30.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Google cloud一键配置ssr+bbr加速">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:description" content="一直以来都使用teddysun的SSR和BBR一键包，但是很多时候安装BBR之前就已经安装了SSR，安装BBR就是为了加速SSR，故今日结合两个安装包，自定义了一个SSR+BBR加速一键安装包。 系统要求系统支持： CentOS 6+ ， Debian 7+ ， Ubuntu 12+虚拟技术： 除OpenVZ （ KVM 、 Xen 、 VMware 等）内存要求： ≥ 128M 关于1.本脚本在">
   
     <link rel="alternative" href="/atom.xml" title="King Blog" type="application/atom+xml">
   
@@ -178,7 +179,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一直以来都使用teddysun的SSR和BBR一键包，但是很多时候安装BBR之前就已经安装了SSR，安装BBR就是为了加速SSR，故今日结合两个安装包，自定义了一个SSR+BBR加速一键安装包。</p>
+<h3 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h3><p>系统支持： CentOS 6+ ， Debian 7+ ， Ubuntu 12+<br>虚拟技术： 除OpenVZ （ KVM 、 Xen 、 VMware 等）<br>内存要求： ≥ 128M</p>
+<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>1.本脚本在DigitalOcean和Vultr上完美通过<br>2.当脚本检测到 VPS 的虚拟方式为 OpenVZ 时，会提示错误，并自动退出安装。<br>3.某些服务商（如 DigitalOcean ）可能需要首先将 VPS 配置为可自定义内核，然后 grub2 的配置才会生效。<br>4.脚本运行完重启发现开不了机的，打开 VPS 后台控制面板的 VNC, 开机卡在 grub 引导 , 手动选择内核即可。<br>5.由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果</p>
+<h3 id="SSR默认配置"><a href="#SSR默认配置" class="headerlink" title="SSR默认配置"></a>SSR默认配置</h3><p>默认加密为： chacha20<br>默认协议为： auth_sha1_v4<br>默认混淆为： tls1.2_ticket_auth</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>登录root，输入如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate http://www.suiyuanjian.com/sb.sh</div><div class="line">chmod +x sb.sh</div><div class="line">./sb.sh</div></pre></td></tr></table></figure></p>
+<p>手动输入ssr的密码和端口<br>等待安装完成，需要按y重启。<br>本脚本SSR已随开机自动启动。</p>
+
       
 
       
@@ -207,6 +214,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSR</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -397,6 +415,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSR</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
